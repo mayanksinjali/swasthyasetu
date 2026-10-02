@@ -20,7 +20,7 @@ export function NewCasePage() {
         <div className="mb-5">
           <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-teal-700">New referral intake</p>
           <h1 className="mt-1 font-display text-2xl font-bold tracking-tight text-ink">A clear start to a coordinated journey</h1>
-          <p className="mt-1 max-w-2xl text-sm leading-relaxed text-ink-2">Enter administrative details, review the deterministic priority and facility match, then create a case in the shared command center.</p>
+          <p className="mt-1 max-w-2xl text-sm leading-relaxed text-ink-2">Enter administrative details, review the deterministic coordination priority, then create the case. Facility recommendations are available from the dashboard.</p>
         </div>
         <CaseIntakeForm
           workflow

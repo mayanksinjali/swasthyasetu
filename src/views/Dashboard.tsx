@@ -55,7 +55,7 @@ function attentionRank(c: Case): number {
 // ─── View ─────────────────────────────────────────────────────────────────────
 
 export function Dashboard() {
-  const { state } = useStore()
+  const { state, matches } = useStore()
   const reduced = useReducedMotion()
   const metrics = useMetrics()
 
@@ -175,6 +175,10 @@ export function Dashboard() {
               <AnimatePresence initial={false}>
                 {attention.map((c, i) => {
                   const action = nextActionFor(c)
+                  const recommendation =
+                    !c.selectedFacilityId && ['assessed', 'facility_recommended', 'facility_unavailable', 'referral_declined'].includes(c.status)
+                      ? matches(c.id).eligible[0]
+                      : undefined
                   const rank = attentionRank(c)
                   const isGolden = c.id === '1042'
                   const overdueDays =
@@ -217,6 +221,7 @@ export function Dashboard() {
                             <span>{c.location}</span>
                             <span>·</span>
                             <span>Next: <span className="font-medium text-teal-700">{action.label}</span></span>
+                            {recommendation && <span>Recommended: <span className="font-medium text-ink-2">{recommendation.facility.name}</span> · {recommendation.score}/100</span>}
                           </div>
                         </div>
                         <ChevronRight size={16} className="shrink-0 text-line-strong transition-transform group-hover:translate-x-0.5 group-hover:text-teal-600" />
