@@ -2,6 +2,10 @@
 
 SwasthyaSetu (Health Bridge) is a frontend prototype for community health referral coordination. It helps a coordinator review fictional cases, calculate explainable coordination priorities, compare suitable facilities, and track referral, transport, and follow-up steps in one workspace.
 
+## Live Demo
+
+[https://swasthyasetu.pages.dev](https://swasthyasetu.pages.dev)
+
 ## Run Locally
 
 ```sh
